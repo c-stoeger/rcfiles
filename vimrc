@@ -185,6 +185,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bling/vim-bufferline'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
+Plugin 'lifepillar/vim-solarized8'
 
 call vundle#end()
 filetype plugin indent on
@@ -209,6 +210,11 @@ let g:DirDiffEnableMappings=1
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries.
 if has('win32')
     set guioptions-=t
+endif
+
+if has('gui_running')
+    " load the solarized colorscheme
+    colorscheme solarized8
 endif
 
 " source host specific file
