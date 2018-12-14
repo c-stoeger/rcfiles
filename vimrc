@@ -36,7 +36,7 @@ set path+=**
 syntax on
 
 " we're working on a dark background
-" setting this results in better readability of 
+" setting this results in better readability of
 " syntax highlighted text
 set background=dark
 
@@ -56,24 +56,24 @@ set history=200		" keep 200 lines of command line history
 set mouse=a
 
 autocmd BufReadPost *
-  \ if line("'\"") >= 1 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
+            \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+            \   exe "normal! g`\"" |
+            \ endif
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
 " Revert with: ":delcommand DiffOrig".
 if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+    command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+                \ | wincmd p | diffthis
 endif
 
 if has('langmap') && exists('+langremap')
-  " Prevent that the langmap option applies to characters that result from a
-  " mapping.  If set (default), this may break plugins (but it's backward
-  " compatible).
-  set nolangremap
+    " Prevent that the langmap option applies to characters that result from a
+    " mapping.  If set (default), this may break plugins (but it's backward
+    " compatible).
+    set nolangremap
 endif
 
 " use folding
@@ -208,7 +208,7 @@ let g:DirDiffEnableMappings=1
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries.
 if has('win32')
-  set guioptions-=t
+    set guioptions-=t
 endif
 
 " source host specific file
