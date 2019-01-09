@@ -186,6 +186,7 @@ Plugin 'bling/vim-bufferline'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'lifepillar/vim-solarized8'
+Plugin 'benmills/vimux'
 
 call vundle#end()
 filetype plugin indent on
@@ -207,6 +208,11 @@ let g:bufferline_echo = 0
 " }}}
 
 let g:DirDiffEnableMappings=1
+
+map <LocalLeader>vp :VimuxPromptCommand<CR>
+map <LocalLeader>vq :VimuxCloseRunner<CR>
+map <LocalLeader>vi :VimuxInspectRunner<CR>
+map <LocalLeader>vz :VimuxZoomRunner<CR>
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries.
 if has('win32')
