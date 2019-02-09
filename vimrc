@@ -8,6 +8,8 @@
 " no compatibility to old vi
 set nocompatible
 
+let g:pymode_python='python3'
+
 " the local leader key for commands
 let maplocalleader=','
 let mapleader=','
@@ -197,22 +199,25 @@ let g:airline_powerline_fonts=1
 
 let g:bufferline_echo = 0
 
-"packadd minpac
-"call minpac#init()
-"call minpac#add('will133/vim-dirdiff')
-"call minpac#add('tpope/vim-surround')
-"call minpac#add('tpope/vim-repeat')
-
-"command! PackUpdate call minpac#update()
-"command! PackClean call minpac#clean()
-" }}}
-
 let g:DirDiffEnableMappings=1
 
 map <LocalLeader>vp :VimuxPromptCommand<CR>
 map <LocalLeader>vq :VimuxCloseRunner<CR>
 map <LocalLeader>vi :VimuxInspectRunner<CR>
 map <LocalLeader>vz :VimuxZoomRunner<CR>
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <LocalLeader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"" virtualenv support in python
+"python3 << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"    project_base_dir = os.environ['VIRTUAL_ENV']
+"    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"    exec(open(activate_this).read(), dict(__file__=activate_this))
+"EOF
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries.
 if has('win32')
