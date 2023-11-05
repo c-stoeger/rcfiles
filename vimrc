@@ -208,6 +208,7 @@ map <LocalLeader>vz :VimuxZoomRunner<CR>
 
 let g:ycm_autoclose_preview_window_after_completion=1
 map <LocalLeader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <LocalLeader>d :YcmShowDetailedDiagnostic<CR>
 
 "" virtualenv support in python
 "python3 << EOF
